@@ -40,8 +40,8 @@ public class NaveMala : MonoBehaviour
 
         if (Vector2.Distance(transform.position, target.position) > - 7 && Vector2.Distance(transform.position, target.position) < 15)
         {
-            //(from, to)
-            transform.position = Vector2.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
+            
+            transform.position = Vector2.MoveTowards(target.position, transform.position, Speed * Time.deltaTime);
 
         }
 

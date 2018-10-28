@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyShip : MonoBehaviour {
     public float Speed;
-    public float stoppingDistance;
-    public float startingDistance;
+    public float stop;
+    public float start;
     private Transform target; //player
 
     public GameObject BulletEmissor;
@@ -36,10 +36,10 @@ public class EnemyShip : MonoBehaviour {
     void Update()
     {
 
-        if (Vector2.Distance(transform.position, target.position) > stoppingDistance && Vector2.Distance(transform.position, target.position) < startingDistance)
+        if (Vector3.Distance(transform.position, target.position) < 10  && Vector3.Distance(transform.position, target.position) > -5)
         {
 
-            transform.position = Vector2.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, target.position, Speed * Time.deltaTime);
 
         }
 
